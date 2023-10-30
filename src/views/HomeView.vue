@@ -32,15 +32,10 @@ const handleLogin = () => {
     .catch((error) => {
       formIsLoading.value = false;
 
-      toast(
-        error.response.data.errors[
-          Object.keys(error.response.data.errors)[0]
-        ][0],
-        {
-          autoClose: 6000,
-          position: toast.POSITION.BOTTOM_RIGHT,
-        }
-      );
+      toast(error.response.data.message, {
+        autoClose: 6000,
+        position: toast.POSITION.BOTTOM_RIGHT,
+      });
     });
 };
 
